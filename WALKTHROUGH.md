@@ -91,6 +91,25 @@ Note: automatically detecting intros and outros requires transcoding. If I impor
   - HDD is in exFAT format because I didn't want to deal with file system permissions (plus easy Windows support is nice)
     - exFAT does not support hardlinking (have to copy files, can take a bit of time, not a big deal)
 
+# Proxy
+
+[Source](https://docs.linuxserver.io/general/swag/)
+
+Make some of your containers available from the **WAN** by using Swag,
+an NGINX proxy provided by LinuxServer.io.
+
+Copy the files from the **proxy-confs** folder into your SWAG
+volumes `/home/media-center/config/nginx/proxy-confs/`.
+
+Configure the environment variables **URL** and the **EMAIL**
+in the **docker-compose.yml** to test the infrastructure.
+
+Soon as you are happy with your configuration, don't forget to
+switch the **STAGING** to **False**.
+
+**REMARK**: Don't forget the proxy is a TLS termination too, the next communications
+between the proxy and the containers are not secured.
+
 # Where to next?
 
 - upgrading to any barebones mini-PC with an Intel N100
